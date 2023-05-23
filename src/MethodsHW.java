@@ -1,4 +1,4 @@
-public class MetodsHW {
+public class MethodsHW {
     public static void main(String[] args){
 
     }

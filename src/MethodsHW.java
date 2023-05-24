@@ -13,7 +13,7 @@ public class MethodsHW {
                 case 1:
                     System.out.print("Введите год: ");
                     var year = scanner.nextInt();
-                    isLeapYear(year);
+                    checkYearOnLeap(year);
                     break;
                 case 2:
                     System.out.print("Ведите тип ОС: ");
@@ -33,7 +33,7 @@ public class MethodsHW {
         }
     }
 
-    private static void isLeapYear(int year) {
+    private static void checkYearOnLeap(int year) {
         if (year % 4 == 0 && (year % 100 != 0) || year % 400 == 0) {
             System.out.println(year + "год является высокосным");
         } else {
@@ -44,11 +44,12 @@ public class MethodsHW {
 
     private static void printDevice(int clientOS) {
         int year = LocalDate.now().getYear();
-        if (year < 2015 && clientOS == 0) {
+        var a =2015;
+        if (year < a && clientOS == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (year < 2015 && clientOS == 1) {
+        } else if (year < a && clientOS == 1) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (year >= 2015 && clientOS == 0) {
+        } else if (year >= a && clientOS == 0) {
             System.out.println("Установите  версию приложения для iOS по ссылке");
         } else {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
@@ -64,7 +65,7 @@ public class MethodsHW {
         if (distance > 20) {
             days++;
         }
-        if (distance > 60) {
+        if (distance > 60 && distance< 100) {
             days++;
         }
         return (days);

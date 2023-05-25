@@ -61,6 +61,7 @@ public class MethodsHW {
         if (distance > 100) {
             System.out.println("Доставки нет!");
             return -1;
+
         }
         int days = 1;
         if (distance > 20) {

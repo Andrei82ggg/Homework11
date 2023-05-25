@@ -3,7 +3,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class MethodsHW {
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("Выберите метод: \n1. Высокосный год \n2. Проверка устройства \n3. Количество дней");
@@ -18,7 +18,9 @@ public class MethodsHW {
                 case 2:
                     System.out.print("Ведите тип ОС: ");
                     var osType = scanner.nextInt();
-                    printDevice(osType);
+                    System.out.println("Введите год ОС: ");
+                    var osYaer = scanner.nextInt();
+                    printDevice(osType, osYaer);
                     break;
                 case 3: {
                     System.out.println("Введите дистанцию: ");
@@ -42,14 +44,13 @@ public class MethodsHW {
 
     }
 
-    private static void printDevice(int clientOS) {
+    public static void printDevice(int clientOS, int clientYear) {
         int year = LocalDate.now().getYear();
-        var a =2015;
-        if (year < a && clientOS == 0) {
+        if (year < clientYear && clientOS == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (year < a && clientOS == 1) {
+        } else if (year < clientYear && clientOS == 1) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (year >= a && clientOS == 0) {
+        } else if (year >= clientYear && clientOS == 0) {
             System.out.println("Установите  версию приложения для iOS по ссылке");
         } else {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
@@ -65,7 +66,7 @@ public class MethodsHW {
         if (distance > 20) {
             days++;
         }
-        if (distance > 60 && distance< 100) {
+        if (distance > 60 && distance <= 100) {
             days++;
         }
         return (days);
